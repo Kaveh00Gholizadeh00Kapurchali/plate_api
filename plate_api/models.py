@@ -6,7 +6,7 @@ class Vehicle(models.Model):
     # Character field with a maximum length of 255 characters for vehicle plate number
     vehicle_plate = models.CharField(max_length=255, null=False, unique=True)
     status = models.BooleanField(default=False)
-    image_url = models.URLField()
+    image_url = models.URLField(blank=True, null=True, default='')
 
     def __str__(self):  # Human-readable string representation
         return self.vehicle_plate
