@@ -85,14 +85,16 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 #DATABASES = {
-    #  'ENGINE': 'django.db.backends.mysql',
-      #  'NAME': 'plate_db',  # Change this to the actual database name
-      #  'USER': 'root',
-      #  'PASSWORD': 'Z~5xD37rQ<45i9B<',
-      #  'HOST': '127.0.0.1',
-       # 'PORT': '3306',
+   # 'default': {
+       # 'ENGINE': 'django.db.backends.mysql',  # موتور پایگاه داده MySQL
+      #  'NAME': 'plate_db',                   # نام پایگاه داده
+       # 'USER': 'root',                       # نام کاربری پایگاه داده
+      #  'PASSWORD': 'Z~5xD37rQ<45i9B<',       # رمز عبور پایگاه داده
+      #  'HOST': '127.0.0.1',                  # آدرس سرور پایگاه داده
+      #  'PORT': '3306',                       # پورت پیش‌فرض MySQL
    # }
 #}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
