@@ -17,6 +17,6 @@ router.register(r'recognize-plate', VehiclePlateRecognitionViewSet, basename='re
 urlpatterns = [
     path("", index, name="home"),
     path('api/', include(router.urls)),
-     
+ 
 ]
-+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns.extend(static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))
