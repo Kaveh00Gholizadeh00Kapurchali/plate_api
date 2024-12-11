@@ -9,7 +9,7 @@ class VehicleSerializer(serializers.ModelSerializer):
     # Serializer for the Vehicle model
     class Meta:
         model = Vehicle  # The model that this serializer is associated with
-        fields = ['id', 'vehicle_plate', "image_url"]  # The specific fields to include in the serialized output
+        fields = ['id', 'vehicle_plate', "image_url", 'image']  # The specific fields to include in the serialized output
 
 class LicenseSerializer(serializers.ModelSerializer):
     # Nested serializer for the Vehicle model

@@ -135,7 +135,17 @@ class VehicleViewSet(ModelViewSet):
     # Define the queryset for this viewset to handle all Vehicle objects.
     serializer_class = VehicleSerializer
     # Specify the serializer class that should be used for serializing and deserializing data.
-    
+    parser_classes = (MultiPartParser, FormParser)  # برای پذیرش فایل‌های آپلود شده
+
+    def create(self, request, *args, **kwargs):
+        """
+        آپلود تصویر و ایجاد رکورد جدید.
+        """
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()  # ذخیره اطلاعات در پایگاه داده
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)
     
 class LicenseViewSet(ModelViewSet):
     queryset = License.objects.all() 

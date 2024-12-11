@@ -7,6 +7,8 @@ class Vehicle(models.Model):
     vehicle_plate = models.CharField(max_length=255, null=False, unique=True)
     status = models.BooleanField(default=False)
     image_url = models.URLField(blank=True, null=True, default='')
+    image = models.ImageField(upload_to='vehicle_images/')  # ذخیره تصاویر در پوشه vehicle_images/
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):  # Human-readable string representation
         return self.vehicle_plate
